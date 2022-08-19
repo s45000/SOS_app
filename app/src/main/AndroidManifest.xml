@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.allenlab.sosos">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name="com.allenlab.sosos.AppData"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_sosbg"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_sosbg_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Tensoflowlitejava">
+        <activity
+            android:name="com.allenlab.sosos.TutorialActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.allenlab.sosos.PermissionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.allenlab.sosos.CheckingTestActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.allenlab.sosos.SettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB4FK4OpmqUdmSlKgf7rcbs_QNJYDG7SKs" />
+
+        <service
+            android:name="com.allenlab.sosos.DangerDetectingService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name="com.allenlab.sosos.StartActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.allenlab.sosos.CheckingPopupActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name="com.allenlab.sosos.MainActivity"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>
